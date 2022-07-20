@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Movies App!</title>
+  <link rel="stylesheet"
+        href="https://unpkg.com/bootstrap/dist/css/bootstrap.css">
+  <style>
+
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <h1>Movies App!</h1>
+  <form>
+    Title:<input type="text" class="title">
+    Rating:<input type="number" class="rating">
+    <button class="submit">Submit!</button>
+  </form>
+  Movies:
+  <ul>
+
+  </ul>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script>
+  // Add your code here!
+  $('button.submit').on('click', function(event){
+    event.preventDefault();
+    let title = $('input.title')[0].value;
+    let rating =  $('input.rating')[0].value;
+    $('ul').append(`<li>${title} ${rating} <button class="remove">Remove</button></li>`);
+    $('input.title')[0].value = '';
+    $('input.rating')[0].value = '';
+  })
+  $('.remove').on('click',function(){
+    console.log('clicked!')
+    $('button.remove').parent().remove();
+  })
+</script>
+</body>
+
+</html>
