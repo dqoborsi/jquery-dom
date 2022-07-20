@@ -90,6 +90,9 @@
       let g = $('.form-control.green')[0].value;
       $('body').css('background-color', `rgb(${r},${g},${b})`)
     })
+    $('img').click(function(event){
+      event.target.remove();
+    })
   });
 </script>
 </body>
