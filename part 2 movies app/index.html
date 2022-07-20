@@ -20,7 +20,7 @@
   </form>
   Movies:
   <ul>
-
+    <li>Title Rating<button class="remove">Remove</button></li>
   </ul>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
@@ -34,9 +34,9 @@
     $('input.title')[0].value = '';
     $('input.rating')[0].value = '';
   })
-  $('.remove').on('click',function(){
+  $('ul').on('click', 'button', function(event){
     console.log('clicked!')
-    $('button.remove').parent().remove();
+    $(event.target).parent().remove();
   })
 </script>
 </body>
